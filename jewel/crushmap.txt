@@ -1,0 +1,296 @@
+# begin crush map
+tunable choose_local_tries 0
+tunable choose_local_fallback_tries 0
+tunable choose_total_tries 50
+tunable chooseleaf_descend_once 1
+tunable chooseleaf_vary_r 1
+tunable straw_calc_version 1
+
+# devices
+device 0 osd.0
+device 1 osd.1
+device 2 osd.2
+device 3 osd.3
+device 4 osd.4
+device 5 osd.5
+device 6 osd.6
+device 7 osd.7
+device 8 osd.8
+device 9 osd.9
+device 10 osd.10
+device 11 osd.11
+device 12 osd.12
+device 13 osd.13
+device 14 osd.14
+device 15 osd.15
+device 16 osd.16
+device 17 osd.17
+device 18 osd.18
+device 19 osd.19
+device 20 osd.20
+device 21 osd.21
+device 22 osd.22
+device 23 osd.23
+device 24 osd.24
+device 25 osd.25
+device 26 osd.26
+device 27 osd.27
+device 28 osd.28
+device 29 osd.29
+device 30 osd.30
+device 31 osd.31
+device 32 osd.32
+device 33 osd.33
+device 34 osd.34
+device 35 osd.35
+device 36 osd.36
+device 37 osd.37
+device 38 osd.38
+device 39 osd.39
+device 40 osd.40
+device 41 osd.41
+device 42 osd.42
+device 43 osd.43
+device 44 osd.44
+device 45 osd.45
+device 46 osd.46
+device 47 osd.47
+device 48 osd.48
+device 49 osd.49
+device 50 osd.50
+device 51 osd.51
+device 52 osd.52
+device 53 osd.53
+device 54 osd.54
+device 55 osd.55
+
+# types
+type 0 osd
+type 1 host
+type 2 chassis
+type 3 rack
+type 4 row
+type 5 pdu
+type 6 pod
+type 7 room
+type 8 datacenter
+type 9 region
+type 10 root
+
+# buckets
+host HCI-1-SSD {
+	id -3		# do not change unnecessarily
+	# weight 2.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.0 weight 1.000
+	item osd.1 weight 1.000
+}
+host HCI-2-SSD {
+	id -5		# do not change unnecessarily
+	# weight 2.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.6 weight 1.000
+	item osd.7 weight 1.000
+}
+host HCI-3-SSD {
+	id -7		# do not change unnecessarily
+	# weight 2.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.12 weight 1.000
+	item osd.13 weight 1.000
+}
+host HCI-4-SSD {
+	id -9		# do not change unnecessarily
+	# weight 2.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.18 weight 1.000
+	item osd.19 weight 1.000
+}
+host HCI-5-SSD {
+	id -11		# do not change unnecessarily
+	# weight 1.800
+	alg straw
+	hash 0	# rjenkins1
+	item osd.24 weight 1.000
+	item osd.25 weight 0.800
+}
+host HCI-6-SSD {
+	id -13		# do not change unnecessarily
+	# weight 2.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.30 weight 1.000
+	item osd.31 weight 1.000
+}
+host HCI-7-SSD {
+	id -15		# do not change unnecessarily
+	# weight 2.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.36 weight 1.000
+	item osd.37 weight 1.000
+}
+host HCI-8-SSD {
+	id -17		# do not change unnecessarily
+	# weight 2.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.42 weight 1.000
+	item osd.43 weight 1.000
+}
+root SSD {
+	id -1		# do not change unnecessarily
+	# weight 15.800
+	alg straw
+	hash 0	# rjenkins1
+	item HCI-1-SSD weight 2.000
+	item HCI-2-SSD weight 2.000
+	item HCI-3-SSD weight 2.000
+	item HCI-4-SSD weight 2.000
+	item HCI-5-SSD weight 1.800
+	item HCI-6-SSD weight 2.000
+	item HCI-7-SSD weight 2.000
+	item HCI-8-SSD weight 2.000
+}
+host HCI-1-SAS {
+	id -4		# do not change unnecessarily
+	# weight 8.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.2 weight 2.000
+	item osd.3 weight 2.000
+	item osd.4 weight 2.000
+	item osd.5 weight 2.000
+}
+host HCI-2-SAS {
+	id -6		# do not change unnecessarily
+	# weight 8.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.8 weight 2.000
+	item osd.9 weight 2.000
+	item osd.10 weight 2.000
+	item osd.11 weight 2.000
+}
+host HCI-3-SAS {
+	id -8		# do not change unnecessarily
+	# weight 8.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.14 weight 2.000
+	item osd.15 weight 2.000
+	item osd.16 weight 2.000
+	item osd.17 weight 2.000
+}
+host HCI-4-SAS {
+	id -10		# do not change unnecessarily
+	# weight 8.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.20 weight 2.000
+	item osd.21 weight 2.000
+	item osd.22 weight 2.000
+	item osd.23 weight 2.000
+}
+host HCI-5-SAS {
+	id -12		# do not change unnecessarily
+	# weight 7.700
+	alg straw
+	hash 0	# rjenkins1
+	item osd.26 weight 1.700
+	item osd.27 weight 2.000
+	item osd.28 weight 2.000
+	item osd.29 weight 2.000
+}
+host HCI-6-SAS {
+	id -14		# do not change unnecessarily
+	# weight 8.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.32 weight 2.000
+	item osd.33 weight 2.000
+	item osd.34 weight 2.000
+	item osd.35 weight 2.000
+}
+host HCI-7-SAS {
+	id -16		# do not change unnecessarily
+	# weight 8.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.38 weight 2.000
+	item osd.39 weight 2.000
+	item osd.40 weight 2.000
+	item osd.41 weight 2.000
+}
+host HCI-8-SAS {
+	id -18		# do not change unnecessarily
+	# weight 8.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.44 weight 2.000
+	item osd.45 weight 2.000
+	item osd.46 weight 2.000
+	item osd.47 weight 2.000
+}
+host HCI-9-SAS {
+	id -20		# do not change unnecessarily
+	# weight 12.000
+	alg straw
+	hash 0	# rjenkins1
+	item osd.50 weight 2.000
+	item osd.51 weight 2.000
+	item osd.52 weight 2.000
+	item osd.53 weight 2.000
+	item osd.48 weight 2.000
+	item osd.49 weight 2.000
+}
+host HCI-10-SAS {
+	id -19		# do not change unnecessarily
+	# weight 3.800
+	alg straw
+	hash 0	# rjenkins1
+	item osd.54 weight 1.800
+	item osd.55 weight 2.000
+}
+root SAS {
+	id -2		# do not change unnecessarily
+	# weight 79.500
+	alg straw
+	hash 0	# rjenkins1
+	item HCI-1-SAS weight 8.000
+	item HCI-2-SAS weight 8.000
+	item HCI-3-SAS weight 8.000
+	item HCI-4-SAS weight 8.000
+	item HCI-5-SAS weight 7.700
+	item HCI-6-SAS weight 8.000
+	item HCI-7-SAS weight 8.000
+	item HCI-8-SAS weight 8.000
+	item HCI-9-SAS weight 12.000
+	item HCI-10-SAS weight 3.800
+}
+
+# rules
+rule replicated_ruleset_0 {
+	ruleset 0
+	type replicated
+	min_size 1
+	max_size 10
+	step take SSD
+	step chooseleaf firstn 0 type host
+	step emit
+}
+rule replicated_ruleset_1 {
+	ruleset 1
+	type replicated
+	min_size 1
+	max_size 10
+	step take SAS
+	step chooseleaf firstn 0 type host
+	step emit
+}
+
+# end crush map

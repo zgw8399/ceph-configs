@@ -1,1 +1,1 @@
-# ceph-tutorials
+# ceph-configs
